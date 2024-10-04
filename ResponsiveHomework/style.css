@@ -1,0 +1,121 @@
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: beige;
+    padding: 20px;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.content_header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.color_container {
+    color: yellow;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 20px auto;
+    background-color: black;
+}
+
+.color_container h3 {
+    text-align: center;
+}
+
+.color {
+    border: 10px solid black;
+    border-bottom: 40px solid black;
+    width: 100%;
+    height: 400px;
+    max-width: 100%;
+}
+
+.color1 { background-color: red; }
+.color2 { background-color: orange; }
+.color3 { background-color: yellow; }
+.color4 { background-color: green; }
+.color5 { background-color: violet; }
+.color6 { background-color: white; }
+.color7 { background-color: pink; }
+
+@media screen and (min-width: 767px) {
+    .color_container {
+        width: 100%;
+        display: inline-block;
+    }
+    .color {
+        border-radius: 50%;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .color_container {
+        display: inline-block;
+        border-radius: 0%;
+    }
+    .color {
+        border-radius: 0%;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: black;
+        color: white;
+    }
+}
+
+#theme-toggle {
+    position: fixed; /* Fixed position */
+    bottom: 20px; /* Distance from the bottom of the viewport */
+    left: 20px; /* Distance from the left of the viewport */
+    padding: 10px;
+    border: none;
+    border-radius: 50%; /* Round button */
+    background-color: black; /* Background color for the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    z-index: 1000; /* Ensure it appears above other elements */
+    display: flex; /* Use flexbox for icon alignment */
+    justify-content: center; /* Center icons horizontally */
+    align-items: center; /* Center icons vertically */
+    transition: background-color 0.3s; /* Smooth transition for background */
+}
+
+.sun-icon {
+    display: block; /* Show sun icon by default */
+    color: white; /* Sun icon color */
+}
+
+.moon-icon {
+    display: none; 
+    color: black; /* Moon icon color */
+}
+
+body.dark-mode #theme-toggle {
+    background-color: white; /* Change background for dark mode */
+}
+
+/* Ensure icons are correctly displayed based on theme */
+body.dark-mode #theme-toggle .sun-icon {
+    display: none; /* Hide sun icon in dark mode */
+}
+
+body.dark-mode #theme-toggle .moon-icon {
+    display: block; /* Show moon icon in dark mode */
+}
+
+body.dark-mode {
+    background-color: black; /* Background color for dark mode */
+    color: white; /* Text color for dark mode */
+}
+
+/* Additional styles for transitions */
+body {
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text color */
+}
+
